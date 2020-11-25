@@ -41,9 +41,7 @@ defaults TCP
 frontend stats
 	mode http
 	bind 0.0.0.0:8080
-        stats enable
-        stats hide-version
-        stats scope   .
+        stats enable        stats hide-version
         stats uri     /
         stats realm   HAProxy\ Statistics
 	stats refresh 60s
