@@ -1,0 +1,13 @@
+version: "3"
+services:
+  haproxy:
+    container_name: haproxy
+    image: haproxy:${HAPROXY_VERSION}
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - ${HAPROXY_VOLUME}:/usr/local/etc/haproxy:ro
+      - ${HAPROXY_VOLUME}/hosts:/etc/hosts:ro
