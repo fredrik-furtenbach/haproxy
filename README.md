@@ -21,13 +21,19 @@
 Begränsa läs- och skrivrättigheterna i ./config-foldern, speciellt filerna i ./config/ssl/certs.
 
 ## Starta
-*docker-compose up -d*
+*./start-haproxy.sh*
 
 ## Stoppa
-*docker-compose down*
+*./stop-haproxy.sh*
 
 ## Uppgradera
-*docker-compose pull; docker-compose up -d*
+*./upgrade-haproxy.sh*
+
+## Kontrollera status
+*./status-haproxy.sh*
+
+## Loggar
+*./logs-haproxy.sh*
 
 ## Kontrollera haproxy.cfg
 *./check-config.sh*
