@@ -1,2 +1,2 @@
 #/bin/sh
-docker-compose up -docker
+docker-compose up -d
