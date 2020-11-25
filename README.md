@@ -1,5 +1,10 @@
 # Instruktioner
 
+## Prereq
+- Docker
+- Docker-compose
+- Git
+
 ## Installera
 - Gå till /opt *cd /opt*
 - Ta ner repot *git clone https://github.com/fredrik-furtenbach/haproxy.git*
