@@ -3,6 +3,9 @@
 ## Installera
 - Gå till /opt *cd /opt*
 - Ta ner repot *git clone https://github.com/fredrik-furtenbach/haproxy.git*
+- Kopiera *./config/haproxy.cfg.example* till *./config/haproxy.cfg*
+- Kopiera *./config/hosts.example* till *./config/hosts*
+- Kopiera *.env.example* till *.env*
 
 ## Konfigurationsfiler
 - *./config/haproxy.cfg* - Konfiguration för HAProxy
