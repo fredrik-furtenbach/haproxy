@@ -74,7 +74,7 @@ frontend secureweb
 	acl is_examplesite hdr(host) -i www.example.com
 
 	# Add headers
-        http-response set-header Strict-Transport-Security "max-age=16000000; includeSubDomains; preload;" if { ssl_fc }
+        http-response set-header Strict-Transport-Security "max-age=16000000; includeSubDomains; preload;"
 
 	# Remove headers that expose security-sensitive information.
         http-response del-header Server
