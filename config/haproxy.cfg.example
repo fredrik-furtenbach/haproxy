@@ -1,6 +1,6 @@
 global
         maxconn 50000
-        log stderr format iso local7
+        log stdout format iso local7
         nbthread 4
 
 	# Default SSL material locations
@@ -40,6 +40,15 @@ defaults TCP
         timeout server  30s
 
 
+# Proxy cache
+#cache ramcache
+# Max size in Mb
+#        total-max-size 1024
+# Max object size in bytes
+#        max-object-size 327680
+# Max age in seconds
+#        max-age 240
+
 #########################################
 #		Frontend		#
 #########################################
@@ -69,6 +78,8 @@ frontend secureweb
 
 	# Options
 	#option accept-invalid-http-request
+        option httplog
+        option dontlognull
 
         # ACLs
 	acl is_examplesite hdr(host) -i www.example.com
@@ -93,6 +104,11 @@ backend examplesite
 	mode http
 	option httpchk GET
         http-check send hdr Host www.example.com
+
+        # Cache rules
+        #acl static path_end -i .gif .png .jpg .css .js
+        #http-request cache-use ramcache if static
+        #http-response cache-store ramcache
 
 	balance leastconn
 	# Add cookie for sticky connections
